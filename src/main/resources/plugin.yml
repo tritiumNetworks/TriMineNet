@@ -1,0 +1,8 @@
+name: TriMineNet
+version: ${project.version}
+main: xyz.trinets.minecraft.triminenet.TriMineNet
+api-version: 1.13
+load: STARTUP
+authors: [TriNet, PMH]
+description: Paper Plugin for TriMineNet Minecraft Server
+website: https://github.com/tritiumNetworks/TriMineNet
