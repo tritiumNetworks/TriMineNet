@@ -6,3 +6,7 @@ load: STARTUP
 authors: [TriNet, PMH]
 description: Paper Plugin for TriMineNet Minecraft Server
 website: https://github.com/tritiumNetworks/TriMineNet
+commands:
+  spawn:
+    usage: /spawn
+    description: 스폰으로 이동합니다

@@ -19,8 +19,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class ChannelSelector implements Listener {
-    private TriMineNet plugin = TriMineNet.getPlugin(TriMineNet.class);
-
     @EventHandler
     public void onPlayerOpenChannelList (InventoryOpenEvent event) {
         InventoryView inventory = event.getView();
@@ -125,7 +123,22 @@ public class ChannelSelector implements Listener {
             player.sendMessage("Teleport Location is not Correct!");
         } else {
             player.teleport(location);
-            player.sendMessage(letter + selected + " Channel");
+            Player pPlayer = (Player) player;
+            pPlayer.sendActionBar(letter + selected + " Channel");
+
+            Location bLocation = location.clone();
+            bLocation.setY(bLocation.getBlockY() - 1);
+            Material bMateral = bLocation.getBlock().getType();
+
+            if (bMateral.isAir()) {
+                for (int a = -9; a < 10; a++) {
+                    for (int b = -9; b < 10; b++) {
+                        world.getBlockAt(location.getBlockX() + a, 9, location.getBlockZ() + b).setType(Material.GRASS_BLOCK);
+                        pPlayer.sendActionBar("Placed Block at " + ChatColor.RED + a + ChatColor.GREEN + 9 + ChatColor.BLUE + b);
+                    }
+                }
+                pPlayer.sendActionBar("Created " + letter + selected + " Channel");
+            }
         }
     }
 }
