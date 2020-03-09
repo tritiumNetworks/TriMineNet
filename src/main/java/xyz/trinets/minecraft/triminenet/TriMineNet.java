@@ -15,6 +15,7 @@ public final class TriMineNet extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SpawnProtection(), this);
         getServer().getPluginManager().registerEvents(new TNTProtection(), this);
         getServer().getPluginManager().registerEvents(new HoveringBlock(), this);
+        getServer().getPluginManager().registerEvents(new ChannelSelector(), this);
     }
 
     @Override
