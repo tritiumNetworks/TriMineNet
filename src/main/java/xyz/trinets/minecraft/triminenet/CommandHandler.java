@@ -16,10 +16,11 @@ public class CommandHandler implements CommandExecutor {
         if (!isNomalPlayer) return true;
 
         Player player = (Player) sender;
+        Location pLocation = player.getLocation();
 
         switch (commandName) {
             case "spawn": {
-                Location location = new Location(plugin.mainWorld, 0.5, 5, 0.5);
+                Location location = new Location(plugin.mainWorld, 0.5, 5, 0.5, pLocation.getYaw(), pLocation.getPitch());
                 player.teleport(location);
                 break;
             }

@@ -119,6 +119,10 @@ public class ChannelSelector implements Listener {
             }
         }
 
+        Location pLocation = player.getLocation();
+        location.setYaw(pLocation.getYaw());
+        location.setPitch(pLocation.getPitch());
+
         if (location == null) {
             player.sendMessage("Teleport Location is not Correct!");
         } else {
